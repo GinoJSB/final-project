@@ -9,19 +9,19 @@ import java.util.List;
 public interface INoteService  {
 
 
-    public void saveNotas (NoteReqDTO dto);
+    public void saveNotes (NoteReqDTO dto);
 
 
-    public void deleteNotas (Long id);
+    public void deleteNotes (Long id);
 
-    public NoteResponseDTO findNotas(Long id);
+    public NoteResponseDTO findNotes(Long id);
 
 
 
-    public void archiveNotas (Long id, boolean archived);
+    public void archiveNotes (Long id, boolean archived);
 
 
     NoteResponseDTO updateNote(Long id, NoteReqDTO notiReqDTO);
 
-    List<NoteResponseDTO> getNotas();
+    List<NoteResponseDTO> getNotes();
 }

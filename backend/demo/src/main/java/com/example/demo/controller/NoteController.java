@@ -1,12 +1,10 @@
 package com.example.demo.controller;
-
 import com.example.demo.model.DTO.NoteReqDTO;
 import com.example.demo.model.DTO.NoteResponseDTO;
 import com.example.demo.model.Entity.Note;
 import com.example.demo.service.INoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -17,19 +15,19 @@ public class NoteController {
 
     @GetMapping("/notes")
     public List<NoteResponseDTO> getNotas() {
-        return notiServ.getNotas();
+        return notiServ.getNotes();
     }
 
     @PostMapping("/notes")
     public String saveNotas(@RequestBody NoteReqDTO noteReqDTO) {
-        notiServ.saveNotas(noteReqDTO);
-        return "La nota fue creada correctamente";
+        notiServ.saveNotes(noteReqDTO);
+        return "The note was created successfully";
     }
 
     @DeleteMapping("/notes/{id}")
     public String deleteNotas(@PathVariable Long id) {
-        notiServ.deleteNotas(id);
-        return "La nota fue eliminada correctamente";
+        notiServ.deleteNotes(id);
+        return "The note was deleted successfully";
     }
 
     @PutMapping("/notes/{id}")
@@ -39,7 +37,7 @@ public class NoteController {
 
     @PutMapping("/notes/archived/{id}")
     public String archiveNotas(@PathVariable Long id, @RequestParam(required = true) boolean archived) {
-        notiServ.archiveNotas(id, archived);
+        notiServ.archiveNotes(id, archived);
         return archived ? "The note was archived successfully" : "The note was unarchived successfully";
 
     }

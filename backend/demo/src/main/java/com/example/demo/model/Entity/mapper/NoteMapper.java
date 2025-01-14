@@ -1,15 +1,15 @@
-package com.example.demo.model.Entity.mapper;
-import com.example.demo.model.DTO.NoteReqDTO;
-import com.example.demo.model.DTO.NoteResponseDTO;
-import com.example.demo.model.Entity.Note;
-import org.mapstruct.*;
+    package com.example.demo.model.Entity.mapper;
+    import com.example.demo.model.DTO.NoteReqDTO;
+    import com.example.demo.model.DTO.NoteResponseDTO;
+    import com.example.demo.model.Entity.Note;
+    import org.mapstruct.*;
 
-import java.util.List;
+    import java.util.List;
 
-@Mapper(componentModel = "spring", uses = { CategoryMapper.class })
-public interface NoteMapper {
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Note updateNoteReqDTOToNote(NoteReqDTO dto, @MappingTarget Note note);
-    NoteResponseDTO noteToNoteResponseDTO(Note note);
-    List<NoteResponseDTO> notesToNotesResponseDTO(List<Note> notes);
-}
+    @Mapper(componentModel = "spring", uses = { CategoryMapper.class })
+    public interface NoteMapper {
+        @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+        Note updateNoteReqDTOToNote(NoteReqDTO dto, @MappingTarget Note note);
+        NoteResponseDTO noteToNoteResponseDTO(Note note);
+        List<NoteResponseDTO> notesToNotesResponseDTO(List<Note> notes);
+    }
