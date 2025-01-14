@@ -14,5 +14,5 @@ public class NoteResponseDTO {
     private String titulo;
     private String contenido;
     private boolean archived;
-
+    private List<CategoryResponseDTO> categories;
 }

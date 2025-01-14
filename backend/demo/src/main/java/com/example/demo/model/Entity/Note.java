@@ -17,6 +17,9 @@ public class Note {
     private boolean archived=false;
 
 
+    @OneToMany(mappedBy = "note", cascade = {CascadeType.REMOVE})
+    private List<Category> categories;
+
     public Note() {
     }
 

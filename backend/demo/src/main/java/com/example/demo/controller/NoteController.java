@@ -37,10 +37,11 @@ public class NoteController {
         return notiServ.updateNote(id, noteReqDTO);
     }
 
-    @PutMapping("/notes/{id}")
+    @PutMapping("/notes/archived/{id}")
     public String archiveNotas(@PathVariable Long id, @RequestParam(required = true) boolean archived) {
         notiServ.archiveNotas(id, archived);
-        return archived ? "La nota fue archivada correctamente" : "La nota fue desarchivada correctamente";
+        return archived ? "The note was archived successfully" : "The note was unarchived successfully";
+
     }
 }
 
