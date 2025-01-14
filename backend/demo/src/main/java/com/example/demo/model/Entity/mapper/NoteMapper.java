@@ -6,7 +6,7 @@ import org.mapstruct.*;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring", uses = { CategoryMapper.class })
 public interface NoteMapper {
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Note updateNoteReqDTOToNote(NoteReqDTO dto, @MappingTarget Note note);
